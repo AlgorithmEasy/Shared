@@ -1,0 +1,3 @@
+[submodule "Server.UserCenter"]
+	path = Server.UserCenter
+	url = git@github.com:AlgorithmEasy/Server.UserCenter.git
