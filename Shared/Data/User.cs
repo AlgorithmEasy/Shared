@@ -25,6 +25,7 @@ namespace AlgorithmEasy.Shared.Data
         public string Email { get; set; }
 
         public IEnumerable<Session> Sessions { get; set; }
+        public IEnumerable<LearningHistory> LearningHistories { get; set; }
     }
 
 }

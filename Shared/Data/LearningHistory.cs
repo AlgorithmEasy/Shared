@@ -4,8 +4,7 @@ namespace AlgorithmEasy.Shared.Data
 {
     public class LearningHistory
     {
-        public User User { get; init; }
-
-        public short CourseId { get; init; }
+        public Course Course { get; init; }
+        public int Progress { get; set; }
     }
 }

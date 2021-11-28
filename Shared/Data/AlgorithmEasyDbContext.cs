@@ -7,6 +7,7 @@ namespace AlgorithmEasy.Shared.Data
         public DbSet<User> Users { get; }
         public DbSet<Role> Roles { get; }
         public DbSet<Session> Sessions { get; }
+        public DbSet<Course> Courses { get; }
         public DbSet<LearningHistory> LearningHistories { get; }
 
 
@@ -34,6 +35,11 @@ namespace AlgorithmEasy.Shared.Data
                 {
                     entity.Property(session => session.LoginTime).ValueGeneratedOnAdd();
                     entity.HasKey(session => session.SessionId);
+                })
+                .Entity<Course>(entity =>
+                {
+                    entity.Property(course => course.CourseId).ValueGeneratedOnAdd();
+                    entity.HasKey(course => course.CourseId);
                 })
                 .Entity<LearningHistory>(entity =>
                 {
