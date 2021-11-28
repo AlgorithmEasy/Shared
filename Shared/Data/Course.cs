@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AlgorithmEasy.Shared.Data
 {
@@ -10,5 +11,7 @@ namespace AlgorithmEasy.Shared.Data
         public string Title { get; set; }
 
         public string Content { get; set; }
+
+        public DateTime UpdateTime { get; set; }
     }
 }

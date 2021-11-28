@@ -3,14 +3,16 @@ using System;
 using AlgorithmEasy.Shared.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AlgorithmEasy.Shared.Migrations
 {
     [DbContext(typeof(AlgorithmEasyDbContext))]
-    partial class AlgorithmEasyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211128144013_ModifyTable")]
+    partial class ModifyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

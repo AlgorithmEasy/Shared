@@ -7,7 +7,7 @@ namespace AlgorithmEasy.Shared.Data
     {
         [Required(ErrorMessage = "用户名不能为空。")]
         [MaxLength(30, ErrorMessage = "用户名不得超过30个字符。")]
-        public string Id { get; init; }
+        public string UserId { get; init; }
 
         [Required(ErrorMessage = "昵称不能为空。")]
         [MaxLength(20, ErrorMessage = "昵称不得超过20个字符")]

@@ -19,12 +19,11 @@ namespace AlgorithmEasy.Shared.Data
             modelBuilder
                 .Entity<User>(entity =>
                 {
-                    entity.Property(user => user.Id).HasComment("用户名");
+                    entity.Property(user => user.UserId).HasComment("用户名");
                     entity.Property(user => user.Password).HasColumnType("binary(32)").HasComment("存储SHA256加密后密码");
-                    entity.HasKey(user => user.Id);
+                    entity.HasKey(user => user.UserId);
                 })
                 .Entity<Role>(entity => {
-                    entity.Property(role => role.RoleName).HasColumnType("varchar(20)");
                     entity.HasKey(role => role.RoleId);
                     entity.HasData(
                             new Role { RoleId = 1, RoleName = "Admin" },
@@ -39,16 +38,18 @@ namespace AlgorithmEasy.Shared.Data
                 })
                 .Entity<Course>(entity =>
                 {
-                    entity.Property(course => course.CourseId).ValueGeneratedOnAdd();
+                    entity.Property(course => course.UpdateTime).ValueGeneratedOnAddOrUpdate();
                     entity.HasKey(course => course.CourseId);
                 })
                 .Entity<LearningHistory>(entity =>
                 {
+                    entity.Property(history => history.UpdateTime).ValueGeneratedOnAddOrUpdate();
                     entity.HasKey("UserId", "CourseId");
                     entity.HasIndex("UserId");
                 })
                 .Entity<Project>(entity =>
                 {
+                    entity.Property(project => project.UpdateTime).ValueGeneratedOnAddOrUpdate();
                     entity.HasKey("UserId", "ProjectName");
                     entity.HasIndex("UserId");
                 });

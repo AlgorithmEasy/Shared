@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Xml;
 
 namespace AlgorithmEasy.Shared.Data
@@ -9,5 +10,7 @@ namespace AlgorithmEasy.Shared.Data
         public string ProjectName { get; set; }
 
         public string Workspace { get; set; }
+
+        public DateTime UpdateTime { get; set; }
     }
 }
