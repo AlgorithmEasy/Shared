@@ -26,6 +26,7 @@ namespace AlgorithmEasy.Shared.Data
 
         public IEnumerable<Session> Sessions { get; set; }
         public IEnumerable<LearningHistory> LearningHistories { get; set; }
+        public IEnumerable<Project> Projects { get; set; }
     }
 
 }

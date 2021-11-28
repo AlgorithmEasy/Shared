@@ -9,6 +9,7 @@ namespace AlgorithmEasy.Shared.Data
         public DbSet<Session> Sessions { get; }
         public DbSet<Course> Courses { get; }
         public DbSet<LearningHistory> LearningHistories { get; }
+        public DbSet<Project> Projects { get; }
 
 
         public AlgorithmEasyDbContext(DbContextOptions<AlgorithmEasyDbContext> options) : base(options) { }
@@ -44,6 +45,11 @@ namespace AlgorithmEasy.Shared.Data
                 .Entity<LearningHistory>(entity =>
                 {
                     entity.HasKey("UserId", "CourseId");
+                    entity.HasIndex("UserId");
+                })
+                .Entity<Project>(entity =>
+                {
+                    entity.HasKey("UserId", "ProjectName");
                     entity.HasIndex("UserId");
                 });
             base.OnModelCreating(modelBuilder);
