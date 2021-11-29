@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AlgorithmEasy.Shared.Data
+namespace AlgorithmEasy.Shared.Models
 {
     public class Role
     {

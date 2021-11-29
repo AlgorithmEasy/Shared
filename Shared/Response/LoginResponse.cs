@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace AlgorithmEasy.Shared.Models
+namespace AlgorithmEasy.Shared.Response
 {
-    public class LoginResult
+    public class LoginResponse
     {
         /// <summary>
         ///     用户是否登陆成功.

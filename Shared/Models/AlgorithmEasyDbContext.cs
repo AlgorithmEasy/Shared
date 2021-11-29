@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace AlgorithmEasy.Shared.Data
+namespace AlgorithmEasy.Shared.Models
 {
     public class AlgorithmEasyDbContext : DbContext
     {

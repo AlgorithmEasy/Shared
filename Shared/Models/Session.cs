@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 
-namespace AlgorithmEasy.Shared.Data
+namespace AlgorithmEasy.Shared.Models
 {
     public class Session
     {

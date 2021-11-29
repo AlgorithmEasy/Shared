@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AlgorithmEasy.Shared.Data
+namespace AlgorithmEasy.Shared.Models
 {
     public class LearningHistory
     {

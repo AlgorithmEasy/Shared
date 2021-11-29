@@ -1,6 +1,6 @@
-﻿namespace AlgorithmEasy.Shared.Models
+﻿namespace AlgorithmEasy.Shared.Response
 {
-    public class RegisterResult
+    public class RegisterResponse
     {
         /// <summary>
         ///     注册是否成功.

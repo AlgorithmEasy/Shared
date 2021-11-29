@@ -1,8 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Xml;
 
-namespace AlgorithmEasy.Shared.Data
+namespace AlgorithmEasy.Shared.Models
 {
     public class Project
     {
