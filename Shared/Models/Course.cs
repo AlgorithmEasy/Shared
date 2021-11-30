@@ -1,17 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace AlgorithmEasy.Shared.Models
+﻿namespace AlgorithmEasy.Shared.Models
 {
     public class Course
     {
         public int CourseId { get; init; }
 
-        [MaxLength(30, ErrorMessage = "课程名称不得超过30字")]
-        public string Title { get; set; }
-
-        public string Content { get; set; }
-
-        public DateTime UpdateTime { get; set; }
+        public CourseDetail CourseDetail { get; init; }
     }
 }

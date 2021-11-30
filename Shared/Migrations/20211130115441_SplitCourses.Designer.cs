@@ -3,14 +3,16 @@ using System;
 using AlgorithmEasy.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AlgorithmEasy.Shared.Migrations
 {
     [DbContext(typeof(AlgorithmEasyDbContext))]
-    partial class AlgorithmEasyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211130115441_SplitCourses")]
+    partial class SplitCourses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,11 +25,16 @@ namespace AlgorithmEasy.Shared.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("CourseDetailTitle")
+                        .HasColumnType("varchar(30)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("varchar(30)");
 
                     b.HasKey("CourseId");
+
+                    b.HasIndex("CourseDetailTitle");
 
                     b.ToTable("Courses");
                 });
@@ -184,6 +191,15 @@ namespace AlgorithmEasy.Shared.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("AlgorithmEasy.Shared.Models.Course", b =>
+                {
+                    b.HasOne("AlgorithmEasy.Shared.Models.CourseDetail", "CourseDetail")
+                        .WithMany()
+                        .HasForeignKey("CourseDetailTitle");
+
+                    b.Navigation("CourseDetail");
                 });
 
             modelBuilder.Entity("AlgorithmEasy.Shared.Models.CourseDetail", b =>

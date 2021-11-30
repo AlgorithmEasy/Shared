@@ -8,6 +8,7 @@ namespace AlgorithmEasy.Shared.Models
         public DbSet<Role> Roles { get; }
         public DbSet<Session> Sessions { get; }
         public DbSet<Course> Courses { get; }
+        public DbSet<CourseDetail> CourseDetails { get; }
         public DbSet<LearningHistory> LearningHistories { get; }
         public DbSet<Project> Projects { get; }
 
@@ -38,8 +39,17 @@ namespace AlgorithmEasy.Shared.Models
                 })
                 .Entity<Course>(entity =>
                 {
-                    entity.Property(course => course.UpdateTime).ValueGeneratedOnAddOrUpdate();
+                    entity.Property<string>("Title").HasColumnType("varchar(30)").ValueGeneratedNever();
                     entity.HasKey(course => course.CourseId);
+                    entity.HasOne<CourseDetail>().WithOne()
+                        .HasForeignKey<CourseDetail>(courseDetail => courseDetail.Title)
+                        .HasPrincipalKey<Course>("Title");
+                })
+                .Entity<CourseDetail>(entity =>
+                {
+                    entity.Property(courseDetail => courseDetail.Title).ValueGeneratedNever();
+                    entity.Property(courseDetail => courseDetail.UpdateTime).ValueGeneratedOnAddOrUpdate();
+                    entity.HasKey(courseDetail => courseDetail.Title);
                 })
                 .Entity<LearningHistory>(entity =>
                 {
