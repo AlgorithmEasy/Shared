@@ -55,13 +55,13 @@ namespace AlgorithmEasy.Shared.Models
                 {
                     entity.Property(history => history.UpdateTime).ValueGeneratedOnAddOrUpdate();
                     entity.HasKey("UserId", "CourseId");
-                    entity.HasIndex("UserId");
+                    entity.HasIndex("UserId", "CourseId");
                 })
                 .Entity<Project>(entity =>
                 {
                     entity.Property(project => project.UpdateTime).ValueGeneratedOnAddOrUpdate();
                     entity.HasKey("UserId", "ProjectName");
-                    entity.HasIndex("UserId");
+                    entity.HasIndex("UserId", "ProjectName");
                 });
             base.OnModelCreating(modelBuilder);
         }
