@@ -6,7 +6,7 @@ namespace AlgorithmEasy.Shared.Models
     {
         public int RoleId { get; init; }
 
-        [Required]
+        [Required(ErrorMessage = "角色名不得为空")]
         [MaxLength(30, ErrorMessage = "角色名不得超过30字")]
         public string RoleName { get; set; }
     }
