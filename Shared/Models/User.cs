@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace AlgorithmEasy.Shared.Models
@@ -23,6 +24,8 @@ namespace AlgorithmEasy.Shared.Models
         [MaxLength(100)]
         [EmailAddress(ErrorMessage = "邮箱地址格式不正确。")]
         public string Email { get; set; }
+
+        public DateTime CreateTime { get; init; }
 
         public IEnumerable<Session> Sessions { get; set; }
         public IEnumerable<LearningHistory> LearningHistories { get; set; }

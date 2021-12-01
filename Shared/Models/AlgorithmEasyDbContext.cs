@@ -21,6 +21,7 @@ namespace AlgorithmEasy.Shared.Models
                 .Entity<User>(entity =>
                 {
                     entity.Property(user => user.UserId).HasComment("用户名");
+                    entity.Property(user => user.CreateTime).ValueGeneratedOnAdd().HasComment("注册时间");
                     entity.Property(user => user.Password).HasColumnType("binary(32)").HasComment("存储SHA256加密后密码");
                     entity.HasKey(user => user.UserId);
                 })
