@@ -4,3 +4,6 @@
 [submodule "StudentSide"]
 	path = StudentSide
 	url = git@github.com:AlgorithmEasy/StudentSide.git
+[submodule "Server.ProjectCenter"]
+	path = Server.ProjectCenter
+	url = git@github.com:AlgorithmEasy/Server.ProjectCenter.git
