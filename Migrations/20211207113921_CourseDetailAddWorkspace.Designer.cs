@@ -42,13 +42,13 @@ namespace AlgorithmEasy.Shared.Migrations
 
                     b.Property<string>("Content")
                         .HasColumnType("longtext");
+                    
+                    b.Property<string>("Workspace")
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("UpdateTime")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Workspace")
-                        .HasColumnType("longtext");
 
                     b.HasKey("Title");
 

@@ -86,12 +86,12 @@ namespace AlgorithmEasy.Shared.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("varchar(30)");
 
+                    b.Property<string>("Workspace")
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("UpdateTime")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Workspace")
-                        .HasColumnType("longtext");
 
                     b.HasKey("UserId", "ProjectName");
 

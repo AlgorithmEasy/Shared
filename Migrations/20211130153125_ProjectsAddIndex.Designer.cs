@@ -25,16 +25,11 @@ namespace AlgorithmEasy.Shared.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("CourseDetailTitle")
-                        .HasColumnType("varchar(30)");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("varchar(30)");
 
                     b.HasKey("CourseId");
-
-                    b.HasIndex("CourseDetailTitle");
 
                     b.ToTable("Courses");
                 });
@@ -191,15 +186,6 @@ namespace AlgorithmEasy.Shared.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("AlgorithmEasy.Shared.Models.Course", b =>
-                {
-                    b.HasOne("AlgorithmEasy.Shared.Models.CourseDetail", "CourseDetail")
-                        .WithMany()
-                        .HasForeignKey("CourseDetailTitle");
-
-                    b.Navigation("CourseDetail");
                 });
 
             modelBuilder.Entity("AlgorithmEasy.Shared.Models.CourseDetail", b =>
