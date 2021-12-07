@@ -14,9 +14,8 @@ namespace AlgorithmEasy.Shared.Responses
         /// </summary>
         public string UserId { get; init; }
 
-        /// <summary>
-        ///     此次登录的 sessionId.
-        /// </summary>
-        public Guid SessionId { get; init; }
+        public string Role { get; init; }
+
+        public string Token { get; init; }
     }
 }
