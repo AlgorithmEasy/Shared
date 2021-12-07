@@ -11,6 +11,8 @@ namespace AlgorithmEasy.Shared.Models
 
         public string Content { get; set; }
 
+        public string Workspace { get; set; }
+
         public DateTime UpdateTime { get; set; }
     }
 }
