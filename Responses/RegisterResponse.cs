@@ -1,4 +1,4 @@
-﻿namespace AlgorithmEasy.Shared.Response
+﻿namespace AlgorithmEasy.Shared.Responses
 {
     public class RegisterResponse
     {

@@ -1,4 +1,4 @@
-﻿namespace AlgorithmEasy.Shared.Request
+﻿namespace AlgorithmEasy.Shared.Requests
 {
     public class LoginRequest
     {
