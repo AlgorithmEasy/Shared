@@ -32,7 +32,7 @@ namespace AlgorithmEasy.Shared.Services
                 {
                     new Claim(ClaimTypes.NameIdentifier, User.UserId),
                     new Claim(ClaimTypes.Role, User.Role),
-                    new Claim("JWT", User.Token)
+                    new Claim("Json Web Token", User.Token)
                 }, authenticationType);
 
             return identity;
