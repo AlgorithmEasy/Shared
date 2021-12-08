@@ -11,7 +11,7 @@ namespace AlgorithmEasy.Shared.Models
         public string UserId { get; init; }
 
         [Required(ErrorMessage = "昵称不能为空。")]
-        [MaxLength(20, ErrorMessage = "昵称不得超过20个字符")]
+        [MaxLength(20, ErrorMessage = "昵称不得超过20个字符。")]
         public string Nickname { get; init; }
 
         [Required(ErrorMessage = "密码不能为空。")]

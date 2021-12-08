@@ -8,7 +8,7 @@ namespace AlgorithmEasy.Shared.Models
     {
         public Guid SessionId { get; init; }
 
-        [Required]
+        [Required(ErrorMessage = "用户不得为空。")]
         public User User { get; set; }
 
         public DateTime LoginTime { get; init; }
