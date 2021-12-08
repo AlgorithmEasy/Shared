@@ -42,7 +42,7 @@ namespace AlgorithmEasy.Shared.Models
                 {
                     entity.Property<string>("Title").HasColumnType("varchar(30)").ValueGeneratedNever();
                     entity.HasKey(course => course.CourseId);
-                    entity.HasOne<CourseDetail>().WithOne()
+                    entity.HasOne(course => course.CourseDetail).WithOne()
                         .HasForeignKey<CourseDetail>(courseDetail => courseDetail.Title)
                         .HasPrincipalKey<Course>("Title");
                 })

@@ -1,4 +1,5 @@
-﻿namespace AlgorithmEasy.Shared.Models
+﻿
+namespace AlgorithmEasy.Shared.Models
 {
     public class Course
     {
