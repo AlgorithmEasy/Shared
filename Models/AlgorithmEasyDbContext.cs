@@ -55,14 +55,20 @@ namespace AlgorithmEasy.Shared.Models
                 .Entity<LearningHistory>(entity =>
                 {
                     entity.Property(history => history.UpdateTime).ValueGeneratedOnAddOrUpdate();
-                    entity.HasKey("UserId", "CourseId");
-                    entity.HasIndex("UserId", "CourseId");
+                    entity.HasKey(history => new { history.UserId, history.CourseId });
+                    entity.HasIndex(history => new { history.UserId, history.CourseId });
+                    entity.HasOne<User>().WithMany(user => user.LearningHistories)
+                        .HasForeignKey(history => history.UserId);
+                    entity.HasOne<Course>().WithMany(course => course.LearningHistories)
+                        .HasForeignKey(history => history.CourseId);
                 })
                 .Entity<Project>(entity =>
                 {
                     entity.Property(project => project.UpdateTime).ValueGeneratedOnAddOrUpdate();
-                    entity.HasKey("UserId", "ProjectName");
-                    entity.HasIndex("UserId", "ProjectName");
+                    entity.HasKey(project => new { project.UserId, project.ProjectName });
+                    entity.HasIndex(project => new { project.UserId, project.ProjectName });
+                    entity.HasOne<User>().WithMany(user => user.Projects)
+                        .HasForeignKey(project => project.UserId);
                 });
             base.OnModelCreating(modelBuilder);
         }
