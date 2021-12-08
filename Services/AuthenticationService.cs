@@ -1,7 +1,8 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using AlgorithmEasy.Shared.Models;
+using AlgorithmEasy.Shared.Requests;
 using AlgorithmEasy.Shared.Responses;
+using AlgorithmEasy.Shared.Statuses;
 using Microsoft.AspNetCore.Components.Authorization;
 
 namespace AlgorithmEasy.Shared.Services
@@ -10,7 +11,7 @@ namespace AlgorithmEasy.Shared.Services
     {
         public virtual LoginResponse User { get; protected set; }
 
-        public abstract Task<LoginResponse> Login(string userId, byte[] password);
+        public abstract Task<LoginStatus> Login(LoginRequest request);
 
         public abstract void Logout();
 
