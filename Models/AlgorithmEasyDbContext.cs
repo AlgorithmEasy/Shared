@@ -4,13 +4,13 @@ namespace AlgorithmEasy.Shared.Models
 {
     public class AlgorithmEasyDbContext : DbContext
     {
-        public DbSet<User> Users { get; }
-        public DbSet<Role> Roles { get; }
-        public DbSet<Session> Sessions { get; }
-        public DbSet<Course> Courses { get; }
-        public DbSet<CourseDetail> CourseDetails { get; }
-        public DbSet<LearningHistory> LearningHistories { get; }
-        public DbSet<Project> Projects { get; }
+        public DbSet<User> Users { get; init; }
+        public DbSet<Role> Roles { get; init; }
+        public DbSet<Session> Sessions { get; init; }
+        public DbSet<Course> Courses { get; init; }
+        public DbSet<CourseDetail> CourseDetails { get; init; }
+        public DbSet<LearningHistory> LearningHistories { get; init; }
+        public DbSet<Project> Projects { get; init; }
 
 
         public AlgorithmEasyDbContext(DbContextOptions<AlgorithmEasyDbContext> options) : base(options) { }
