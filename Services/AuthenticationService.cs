@@ -10,15 +10,15 @@ namespace AlgorithmEasy.Shared.Services
 {
     public abstract class AuthenticationService : AuthenticationStateProvider
     {
-        public virtual LoginResponse User { get; protected set; }
+        protected virtual LoginResponse User { get; set; }
 
         public abstract Task<LoginStatus> Login(LoginRequest request);
 
         public abstract void Logout();
 
-        public virtual event EventHandler<LoginResponse> LoginEventHandler;
+        public event EventHandler<LoginResponse> LoginEventHandler;
 
-        public virtual event EventHandler LogoutEventHandler;
+        public event EventHandler LogoutEventHandler;
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
@@ -42,6 +42,16 @@ namespace AlgorithmEasy.Shared.Services
                 }, authenticationType);
 
             return identity;
+        }
+
+        protected virtual void LoginEventHandle()
+        {
+            LoginEventHandler?.Invoke(this, User);
+        }
+
+        protected virtual void LogoutEventHandle()
+        {
+            LogoutEventHandler?.Invoke(this, EventArgs.Empty);
         }
     }
 }
