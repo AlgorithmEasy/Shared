@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AlgorithmEasy.Shared.Requests;
 using AlgorithmEasy.Shared.Responses;
@@ -14,6 +15,10 @@ namespace AlgorithmEasy.Shared.Services
         public abstract Task<LoginStatus> Login(LoginRequest request);
 
         public abstract void Logout();
+
+        public virtual event EventHandler<LoginResponse> LoginEventHandler;
+
+        public virtual event EventHandler LogoutEventHandler;
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
