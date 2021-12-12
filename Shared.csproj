@@ -4,6 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
 	<AssemblyName>AlgorithmEasy.Shared</AssemblyName>
 	<RootNamespace>AlgorithmEasy.Shared</RootNamespace>
+    <Authors>WzyAndHisFriends</Authors>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/AlgorithmEasy/Shared</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

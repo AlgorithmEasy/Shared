@@ -1,0 +1,32 @@
+name: Publish Shared
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ env.GITHUB_SHA }}
+
+      - name: Setup .Net 5
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.x'
+
+      - name: Setup Version
+        run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+
+      - name: Pack Nuget Package
+        run: dotnet pack --configuration Release /p:Version=${{ env.VERSION }}
+
+      - name: Publish Package
+        run: dotnet nuget push "bin/Release/AlgorithmEasy.Shared.${{ env.VERSION }}.nupkg" --source "https://nuget.pkg.github.com/AlgorithmEasy/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
