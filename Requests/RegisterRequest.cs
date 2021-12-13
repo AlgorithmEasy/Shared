@@ -16,6 +16,9 @@ namespace AlgorithmEasy.Shared.Requests
         public string Password { get; set; }
 
         [Required]
+        public string PasswordConfirm { get; set; }
+
+        [Required]
         public int RoleId { get; set; }
 
         [Required(ErrorMessage = "邮箱不能为空。")]
