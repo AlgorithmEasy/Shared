@@ -13,6 +13,7 @@ namespace AlgorithmEasy.Shared.Requests
         public string Nickname { get; set; }
 
         [Required(ErrorMessage = "密码不能为空。")]
+        [RegularExpression(@"(?=.*\d)(?=.*[a-zA-Z]).{6,}", ErrorMessage = "密码为六位以上字母和数字")]
         public string Password { get; set; }
 
         [Required]
